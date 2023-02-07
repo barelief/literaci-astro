@@ -1,0 +1,40 @@
+---
+const news = [
+  {
+    data: "2022-10-16",
+    tekst:
+      "Polskie wydanie zbioru poezji „Dzika Grusza, Wojna Grzybów“ (Aleksander Śnieżko)",
+  },
+  {
+    data: "2021-09-26",
+    tekst:
+      "Wydarzenie interdyscyplinarne „My Musimy W Trawach Leżeć“ (Alina Lassota)",
+  },
+  ,
+  {
+    data: "2021-07-22",
+    tekst: "Wydanie zbioru poezji „Tête-à-tête“ (Bożena Naruszewicz)",
+  },
+  { data: "2021-06-05", tekst: "Mosty Poetyckie 2021" },
+];
+---
+
+<style>
+  li:before {
+    content: "•";
+    font-size: 10px;
+    vertical-align: middle;
+    padding-right: 7px;
+  }
+</style>
+
+<table style="width: 100%;">
+  {
+    news.map((item) => (
+      <tr>
+        <td style="max-width:100%; white-space:nowrap; vertical-align: top;" class="font-sans pt-1.5 text-xs pr-2 italic font-medium ">{item.data} </td>
+        <td>{item.tekst}</td>
+      </tr>
+    ))
+  }
+</table>

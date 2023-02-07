@@ -1,0 +1,10 @@
+---
+const { czlonkowieObject } = Astro.props;
+import CzlonkowieCard from "../components/CzlonkowieCard.astro"
+---
+
+{
+  czlonkowieObject.map((item) => (
+   <CzlonkowieCard item={item} />
+  ))
+}

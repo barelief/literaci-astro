@@ -1,0 +1,22 @@
+---
+const { item } = Astro.props;
+import { Image, Picture } from "@astrojs/image/components";
+---
+
+<div class="flex items-center">
+  {console.log(item.fields.logoimg[0])}
+  <a href={item.fields.url} target="_blank" >
+    <Image
+    format="jpg"
+    src={item.fields.logoimg[0].url}
+    width={item.fields.logoimg[0].width} 
+    height={item.fields.logoimg[0].height}
+    alt={item.fields.Name}
+    style="max-width: 100%;"
+  />
+  </a>
+</div>
+
+
+
+

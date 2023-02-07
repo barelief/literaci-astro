@@ -1,0 +1,25 @@
+---
+const { item } = Astro.props;
+import { Image, Picture } from "@astrojs/image/components";
+---
+
+<div>
+  <Image
+    format="jpg"
+    src={item.fields.Image[0].url}
+    width={300} 
+    height={200}
+    alt={item.fields["Name"]}
+  />
+  <div class="font-bold text-l mb-0 text-center">
+    {item.fields["Name"].split(" ").reverse().join(" ")}
+  </div>
+  <div class="text-center mb-4">
+    {
+      item.fields.Typ.map((item2) => (
+        <span class="px-1  text-xs italic  mr-2 ">{item2}</span>
+      ))
+    }
+  </div>
+  <p>{item.fields.Biogram}</p>
+</div>

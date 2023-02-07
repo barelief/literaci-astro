@@ -1,0 +1,86 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Czlonkowie from "../components/Czlonkowie.astro";
+import {
+  getFilteredRecords,
+  getSingleRecord,
+  records,
+  getAllRecords,
+} from "../utils/airtable";
+
+// This is workaround, because map is not goind to happen without await
+import { Image, Picture } from "@astrojs/image/components";
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <BaseHead
+      title="O nas"
+      description="Infromacja o Stowarzyszeniu Literatów Polskich na Litwie"
+    />
+  </head>
+  <body>
+    <Header title="O nas" />
+    <main>
+   
+
+      <h1 class="font-bold text-xl mb-2 mt-6">Członkowie</h1>
+      <div class="w-full mb-10">
+        Stowarzyszenie Literatów Polskich na Litwie zaprasza do członkostwa
+        wszystkich mieszkańców Litwy, którzy zajmują się twórczością własną,
+        przekładem lub badaniami literackimi. Nie stawiamy warunków wstępnych,
+        ani nie wymagamy składek członkowskich, aby umożliwić wstąpienie do
+        naszej organizacji wszystkim chętnym. Im więcej nas będzie, tym
+        skuteczniej będziemy promować polską literaturę na Litwie, wspierać jej
+        rozwój i przyczyniać się do polepszenia kondycji polskiej kultury w
+        naszym kraju. Wszystkich zainteresowanych wstąpieniem do Stowarzyszenia <a
+          href="/kontakt"
+          class="underline">prosimy o kontakt</a
+        >.
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 x1:grid-cols-5 2x1:grid-cols-6 gap-10"
+      >
+        <Czlonkowie czlonkowieObject={getFilteredRecords("LLLA", true)} />
+      </div>
+      <div class="w-full lg:w-1/2 x1:w-1/2 2x1:w-1/2 mt-10">
+        Wszystkich zainteresowanych wstąpieniem do Stowarzyszenia <a
+          href="/kontakt"
+          class="underline">prosimy o kontakt</a
+        >.
+      </div>
+      <div class="py-4"></div>
+      <h1 class="font-bold text-xl mb-2">Historia</h1>
+      <div>
+        Krajowe Stowarzyszenie Literatów Polskich powstało w 2009 roku z
+        inicjatywy Teresy Markiewicz, Reginy Pszczołowskiej i Aleksandra
+        Sokołowskiego, który był jego prezesem przez 12 lat. Przez pierwsze 10
+        lat organizowało konkursy poetyckie dla młodzieży i kontakty polskich
+        literatów z Litwy z Macierzą oraz wspierało ich debiuty literackie. W
+        2019 roku rozpoczęło własną działalność wydawniczą oraz przekładową.
+        Wspólnie z partnerami zorganizowało międzynarodowe festiwale Mosty
+        Poetyckie, obchody Światowego Dnia Poezji na Litwie, a także konkursy
+        dla tłumaczy i młodych pisarzy. Obecnie Stowarzyszenie liczy 19
+        członków, którzy oprócz twórczości własnej zajmują się przekładem
+        literackim i rozwojem polsko-litewskiej współpracy w dziedzinie
+        literatury przez działalność publicystyczną i promocyjną. Stałymi
+        partnerami tej działalności są m. in. stowarzyszenie Slinktys i związek
+        malarzy polskich Elipsa. W maju 2021 roku, decyzją Walnego Zgromadzenia
+        członków, organizacja przyjęła nazwę Stowarzyszenie Literatów Polskich
+        na Litwie.
+        <br />
+        <br />
+
+        📜 <a
+          href="https://drive.google.com/file/d/1fa-Sqdbo2RD6zgbMo6oj9Bnkct9ImEUw/view?usp=sharing"
+          >Pobierz Statut Stowarzyszenia</a
+        >
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

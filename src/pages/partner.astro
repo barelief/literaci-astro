@@ -1,0 +1,32 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Partnerzy from "../components/Partnerzy.astro"
+import { getAllRecords, getFilteredRecords, getSingleRecord, records } from "../utils/airtable";
+const rec = await getAllRecords("Partnerzy");
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <BaseHead
+      title="Partnerzy"
+      description="Partnerzy Stowarzyszenia Literatów Polskich na Litwie"
+    />
+  </head>
+  <body>
+    <Header title="Partnerzy" />
+    <main>
+      
+      <div class="font-bold text-xl mb-2">Partnerzy</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-10 "> 
+        
+        <Partnerzy partnerObject={rec} />
+        
+      </div>
+
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,10 @@
+---
+const { partnerObject } = Astro.props;
+import PartnerzyCard from "../components/PartnerzyCard.astro"
+---
+
+{
+  partnerObject.map((item) => (
+   <PartnerzyCard item={item} />
+  ))
+}

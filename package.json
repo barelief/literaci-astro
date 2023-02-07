@@ -1,0 +1,26 @@
+{
+  "name": "@example/blog",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "build+sync": "npm run astro build && sync.cmd",
+    "sync": "sync.cmd",
+    "light-server": "light-server -s dist"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.14.0",
+    "@astrojs/mdx": "^0.16.0",
+    "@astrojs/rss": "^2.1.0",
+    "@astrojs/sitemap": "^1.0.1",
+    "@astrojs/tailwind": "^3.0.1",
+    "astro": "^2.0.6",
+    "sharp": "^0.31.3",
+    "tailwindcss": "^3.2.4"
+  }
+}

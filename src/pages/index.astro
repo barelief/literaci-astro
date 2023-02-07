@@ -1,0 +1,41 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import KasVyksta from "../components/KasVyksta.astro";
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1 class="font-bold text-xl mb-2">Witamy!</h1>
+      <p>
+        ​Jesteśmy ​​Stowarzyszeniem Literatów Polskich na Litwie. Prezentujemy na tej stronie polską aktywność literacką na Litwie i polsko-litewską współpracę w dziedzinie literatury. 
+        Stowarzyszenie zrzesza osoby działające w dziedzinie literatury,
+        reprezentuje ich interesy, promuje międzynarodową współpracę literacką i
+        kształtuje atrakcyjny wizerunek polskiej literatury na Litwie i za
+        granicą.
+      </p>
+      <div class="py-4">
+		🇵🇱 Strona jest w trakcie tworzenia. Dziękujemy za wyrozumiałość. <br/> 
+        🇱🇹 Šiuo metu vykdomi puslapio atnaujinimo darbai, todėl galimi laikini
+        sutrikimai. Dėkojame už supratingumą!
+      </div>
+      <div>
+Co się dzieje: 
+<br/>
+<br/>
+<KasVyksta />
+
+
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
