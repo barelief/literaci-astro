@@ -2,11 +2,66 @@
 const today = new Date();
 ---
 
-<footer>
+<footer onclick="rekvizitai()">
 	<hr class="h-px mb-2 mt-4 bg-gray-200 border-0 dark:bg-gray-200">
-	<span class="text-xs" style="font-family: 'Work Sans'">&copy; 2009-{today.getFullYear()} Lenkų literatų asociacija • Kodas: 302311985 • Naugarduko 76, LT-03202 Vilnius • IBAN: LT527300010114850224</span>
+	<span class="text-xs copypaste hover:cursor-copy" style="font-family: 'Work Sans'">&copy; 2009-{today.getFullYear()} Lenkų literatų asociacija • Kodas: 302311985 • Naugarduko 76, LT-03202 Vilnius • IBAN: LT527300010114850224</span>
 	
 </footer>
+
+
+<div id="tooltip" class="absolute hidden text-[#f2f2f2] bg-[#222222]/70 border-2 border-slate-100 px-3 py-1 rounded font-mono text-xs "></div>
+	  
+<script is:inline>
+  const CopyMe  = async (text) => {
+	try {
+	  await navigator.clipboard.writeText(text);
+	  console.log('Content copied to clipboard: '+text);
+	} catch (err) {
+	  console.error('Failed to copy: ', err);
+	}
+  }
+
+  function rekvizitai()
+  {
+	  CopyMe('Lenkų literatų asociacija\n302311985\nNaugarduko 76, LT-03202 Vilnius\nLT527300010114850224');
+
+  }
+
+  const objects = document.querySelectorAll(".copypaste");
+const tooltip = document.getElementById("tooltip");
+let isTooltipVisible = false;
+
+objects.forEach(object => {
+  object.addEventListener("mouseenter", event => {
+	  object.style.backgroundColor = "lightgrey";
+	  object.style.borderRadius = "3px";
+	tooltip.innerHTML = "Skopiuj";
+	tooltip.style.left = `${event.pageX + 10}px`;
+	tooltip.style.top = `${event.pageY + 10}px`;
+	tooltip.style.display = "block";
+	isTooltipVisible = true;
+  });
+
+  object.addEventListener("mouseleave", event => {
+	tooltip.style.display = "none";
+	object.style.backgroundColor = "white";
+	isTooltipVisible = false;
+  });
+
+  object.addEventListener("mousemove", event => {
+	if (isTooltipVisible) {
+	  tooltip.style.left = `${event.pageX + 10}px`;
+	  tooltip.style.top = `${event.pageY + 10}px`;
+	}
+  });
+
+  object.addEventListener("click", event => {
+	tooltip.innerHTML = "Skopjowane!";
+  });
+});
+
+</script>
+
 <style>
 	footer {
 		padding: 5px;

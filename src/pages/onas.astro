@@ -5,10 +5,14 @@ import Footer from "../components/Footer.astro";
 import Czlonkowie from "../components/Czlonkowie.astro";
 import {
   getFilteredRecords,
+  getFilteredRecords2,
   getSingleRecord,
   records,
   getAllRecords,
-} from "../utils/airtable";
+} from "../../../common/airtable.js";
+
+const rec = await getFilteredRecords2("Autorzy","NameNormalized", "asc", "LLLA", true);
+
 
 // This is workaround, because map is not goind to happen without await
 import { Image, Picture } from "@astrojs/image/components";
@@ -43,9 +47,10 @@ import { Image, Picture } from "@astrojs/image/components";
       </div>
 
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 x1:grid-cols-5 2x1:grid-cols-6 gap-10"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 x1:grid-cols-3 2x1:grid-cols-4 gap-10"
       >
-        <Czlonkowie czlonkowieObject={getFilteredRecords("LLLA", true)} />
+        <!-- <Czlonkowie czlonkowieObject={getFilteredRecords("LLLA", true)} />  -->
+         <Czlonkowie czlonkowieObject={rec} /> 
       </div>
       <div class="w-full lg:w-1/2 x1:w-1/2 2x1:w-1/2 mt-10">
         Wszystkich zainteresowanych wstąpieniem do Stowarzyszenia <a

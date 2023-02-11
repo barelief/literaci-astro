@@ -3,7 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Partnerzy from "../components/Partnerzy.astro"
-import { getAllRecords, getFilteredRecords, getSingleRecord, records } from "../utils/airtable";
+import { getAllRecords, getFilteredRecords, getSingleRecord, records } from "../../../common/airtable.js";
 const rec = await getAllRecords("Partnerzy");
 ---
 

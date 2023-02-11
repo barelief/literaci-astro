@@ -1,70 +1,70 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const meta = {
   title: "Kontakt	",
   description: "Skontaktuj się ze Stowarzyszeniem Literatów Polskich na Litwie",
-
 };
 ---
 
 <!DOCTYPE html>
 <html lang="pl">
-	<head>
-		<BaseHead title={meta.title} description={meta.description} />
-	</head>
-	<body>
-		<Header title={meta.title} />
-		<main>
-			<div class="font-bold text-xl mb-2">Kontakt</div>
-			<div class="flex flex-wrap">
-			  <div class="w-full  ">
-				Stowarzyszenie Literatów Polskich na Litwie<br />
-				Kod: 302311985 (Įmonės kodas)<br />
-				Ul. Naugarduko 76, LT-03202 Vilnius<br />
-				IBAN: LT527300010114850224 (Swedbank)
-				<br />
-				<br />
-				<a href="http://m.me/literaci.lt" class=" text-md underline"
-				  >Napisz do nas przez Messengera</a
-				><br />
-				<br />lub przez poniższy formularz:
-		
-				<form
-				  action="https://formspree.io/f/xdoybrqz"
-				  method="post"
-				  class="w-full max-w-xs mt-4"
-				>
-				  <input
-					type="text"
-					name="name"
-					placeholder="Wpisz swoje imię"
-					class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
-				  />
-				  <input
-					type="email"
-					name="email"
-					id="email"
-					placeholder="Wpisz swój e-mail"
-					class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
-				  />
-				  <textarea
-					rows="7"
-					name="message"
-					placeholder="Napisz swoją wiadomość"
-					class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
-				  ></textarea>
-				  <button
-					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-				  >
-					Wyślij
-				  </button>
-				</form>
-			  </div>
-			</div>
-		 
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={meta.title} description={meta.description} />
+  </head>
+  <body>
+    <Header title={meta.title} />
+    <main>
+      <div class="font-bold text-xl mb-2">Kontakt</div>
+      <div class="flex flex-wrap">
+        <div class="w-full">
+			<span class="copypaste hover:cursor-copy" onclick="CopyMe('Stowarzyszenie Literatów Polskich na Litwie')">Stowarzyszenie Literatów Polskich na Litwie</span><br />
+          Kod: <span class="copypaste hover:cursor-copy" onclick="CopyMe('302311985')">302311985</span> (Įmonės kodas)<br />
+          <span class="copypaste hover:cursor-copy" onclick="CopyMe('Ul. Naugarduko 76, LT-03202 Vilnius')">Ul. Naugarduko 76, LT-03202 Vilnius</span><br />
+          IBAN: <span class="copypaste hover:cursor-copy" onclick="CopyMe('LT527300010114850224')">LT527300010114850224</span>  (Swedbank)
+          <br />
+          <br />
+          <a href="http://m.me/literaci.lt" class="text-md underline"
+            >Napisz do nas przez Messengera</a
+          ><br />
+          <br />lub przez poniższy formularz:
+
+          <form
+            action="https://formspree.io/f/xdoybrqz"
+            method="post"
+            class="w-full max-w-xs mt-4"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Wpisz swoje imię"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Wpisz swój e-mail"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+            />
+            <textarea
+              rows="7"
+              name="message"
+              placeholder="Napisz swoją wiadomość"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+            ></textarea>
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Wyślij
+            </button>
+          </form>
+        </div>
+      </div>
+
+	  
+    </main>
+    <Footer />
+  </body>
 </html>
