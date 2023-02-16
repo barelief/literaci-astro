@@ -35,7 +35,7 @@ objects.forEach(object => {
   object.addEventListener("mouseenter", event => {
 	  object.style.backgroundColor = "lightgrey";
 	  object.style.borderRadius = "3px";
-	tooltip.innerHTML = "Skopiuj";
+	tooltip.innerHTML = "skopiuj";
 	tooltip.style.left = `${event.pageX + 10}px`;
 	tooltip.style.top = `${event.pageY + 10}px`;
 	tooltip.style.display = "block";
@@ -56,7 +56,7 @@ objects.forEach(object => {
   });
 
   object.addEventListener("click", event => {
-	tooltip.innerHTML = "Skopjowane!";
+	tooltip.innerHTML = "skopiowane!";
   });
 });
 

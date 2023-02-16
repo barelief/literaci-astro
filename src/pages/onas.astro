@@ -5,13 +5,14 @@ import Footer from "../components/Footer.astro";
 import Czlonkowie from "../components/Czlonkowie.astro";
 import {
   getFilteredRecords,
-  getFilteredRecords2,
+  get,
   getSingleRecord,
   records,
   getAllRecords,
 } from "../../../common/airtable.js";
 
-const rec = await getFilteredRecords2("Autorzy","NameNormalized", "asc", "LLLA", true);
+// const rec = await get("","Autorzy","NameNormalized", "asc", "LLLA", true);
+const rec = await getFilteredRecords("LLLA", true);
 
 
 // This is workaround, because map is not goind to happen without await
