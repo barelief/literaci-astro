@@ -1,0 +1,38 @@
+---
+import { changeLanguage } from "i18next";
+import { get } from "../../../common/airtable.js";
+import Wiersze from "/src/components/Wiersze.astro";
+
+changeLanguage("lt");
+
+const pattern = "polish";
+const rec1 = await get("appZ36TrComr9ukf3", "Eiles", "order", "asc", "Type", "transgression");
+const rec2 = await get("appZ36TrComr9ukf3", "Eiles", "order", "asc", "Type", "relationship");
+const rec3 = await get("appZ36TrComr9ukf3", "Eiles", "order", "asc", "Type", "identity");
+---
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<html lang="pl">
+  <body>
+    <main class="p-3">
+      Pasaulis telpa akiratin — Antologija yra rengiama <br/>
+      <span class="italic bg-red-50">Pojmeny Horyzont - Antologia jest w trakcie opracowywania</span>
+      <div>
+        <div class="py-5 text-center text-xl font-extrabold">Transgresija <span class="bg-red-50">Transgresja</span></div>
+        <Wiersze items={rec1} />
+
+        <div class="py-5 text-center text-xl font-extrabold">Santykiai / <span class="bg-red-50">Relacje</span></div>
+
+        <Wiersze items={rec2} />
+
+        <div class="py-5 text-center text-xl font-extrabold">Tapatybė / <span class="bg-red-50">Tożsamość</span></div>
+        
+        <Wiersze items={rec3} />
+
+      </div>
+    </main>
+  </body>
+</html>

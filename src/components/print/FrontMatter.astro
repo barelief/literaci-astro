@@ -1,0 +1,193 @@
+---
+import { switchLang } from "../wrappers/LangSwitchWrapper";
+import i18next, { changeLanguage } from "i18next";
+import Authors from "./Authors.astro";
+---
+
+<header>
+  <div class="intro">
+    <h2 class="text-2xl italic titles font-bold text-right">
+      {
+        i18next.language === "pl" ? (
+          <>
+            pojemny <br />
+            horyzont{" "}
+          </>
+        ) : (
+          <>
+            pasaulis
+            <br />
+            telpa
+            <br />
+            akiratin{" "}
+          </>
+        )
+      }
+    </h2>
+  </div>
+  <div class="intro">
+    <h2 class="text-5xl italic titles font-bold text-right">
+      {
+        i18next.language === "pl" ? (
+          <>
+            pojemny <br />
+            horyzont{" "}
+          </>
+        ) : (
+          <>
+            pasaulis
+            <br />
+            telpa
+            <br />
+            akiratin{" "}
+          </>
+        )
+      }
+    </h2>
+    <div class="text-right pt-5">
+      {
+        i18next.language === "pl" ? (
+          <>
+            antologia poezji polskiej i litewskiej
+            <br />
+            <>
+              <br />
+              <br />
+            </>
+          </>
+        ) : (
+          <>lenkų ir lietuvių poezijos rinktinė</>
+        )
+      }
+    </div>
+
+    <div class="text-right pt-10 text-sm">
+      {switchLang("koncepcja i wybór", "sudarytojas")}<br />
+      <b>Bartosz Połoński</b>
+    </div>
+
+    <div class="text-right pt-5 text-sm">
+      {
+        i18next.language === "pl" ? (
+          <>
+            przekład z litewskiego i redakcja
+            <br />
+            <b>Agnieszka Rembiałkowska</b>
+          </>
+        ) : (
+          <>
+            vertėjai
+            <br />
+            <>
+              <b>Birutė Jonuškaitė</b>
+              <br />
+            </>
+            <>
+              <b>Vidas Morkūnas</b>
+              <br />
+            </>
+            <>
+              <b>Žilvinas Norkūnas</b>
+              <br />
+            </>
+            <>
+              <b>Jūratė Petronienė</b>
+              <br />
+            </>
+            <br />
+            redaktorė
+            <br />
+            <>
+              <b>Greta Ambrazaitė</b>
+              <br />
+            </>
+          </>
+        )
+      }
+    </div>
+
+    <div class="text-right pt-5 text-xs bottom">
+      {
+        switchLang(
+          "Stowarzyszenie Literatów Polskich na Litwie",
+          "Lenkų literatų asociacija"
+        )
+      }<br />
+      {switchLang("Wilno 2023", "Vilnius, 2023")}
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="top">
+      {switchLang("Projekt finansowany przez:", "Projektą finansavo:")}
+      {/*
+      <br />
+      <br />
+      Vilnius 700<br/>
+      Vilniaus miesto savivaldybė<br />
+      Tautinių mažumų departamentas prie Lietuvos Respublikos Vyriausybės<br />
+      Fundacja Pomoc Polakom na Wschodzie<br />
+      {
+        switchLang("Instytut Polski w Wilnie", "Lenkijos institutas Vilniuje")
+      }<br />
+      {switchLang("Stowarzyszenie", "Asociacija")} „Slinktys“<br />
+    */}
+      <br /><br/>
+   
+      <svg width="100%">
+        <image href="/logai_two_columns.svg" width="100%" />
+      </svg>
+       
+      
+    </div>
+    <div class="bottom">
+      <i>Pasaulis telpa akiratin</i> : lenkų ir lietuvių poezijos rinktinė =<br/><i>Pojemny horyzont</i> : antologia poezji polskiej i litewskiej <br />
+      {
+        switchLang(
+          "Wydanie I, Stowarzyszenie Literatów Polskich na Litwie",
+          "Išleido Lenkų literatų asociacija"
+        )
+      }, {switchLang("Wilno", "Vilnius, ")} 2023<br />
+     {
+      switchLang(
+        "Druk: UAB „Petro ofsetas“",
+        "Spausdino UAB „Petro ofsetas“"
+      )
+    }
+      <br/><br/>
+      Bibliografinė informacija pateikiama Lietuvos integralios bibliotekų informacinės sistemos (LIBIS) portale ibiblioteka.lt
+      <br /><br/>
+      {switchLang("Nakład 500 egz.", "Tiražas 500 egz.")}
+      <br /><br />
+      ISBN 978-609-96126-7-6
+      <br /><br/>
+
+      © <Authors />, {switchLang("wiersze", "eilėraščiai")}, 2023
+      <br />
+      © Birutė Jonuškaitė, Vidas Morkūnas, Žilvinas Norkūnas, Jūratė Petronienė, Bartoš Polonski,
+      Agnieszka Rembiałkowska, {switchLang("przekłady", "vertimai")}, 2023<br />
+      © Bartoš Polonski, {switchLang("wybór, wstęp, projekt graficzny", "sudarymas, dizainas")},
+      2023<br />
+      © {
+        switchLang(
+          "Stowarzyszenie Literatów Polskich na Litwie",
+          "Lenkų literatų asociacija"
+        )
+      }, 2023
+    </div>
+  </div>
+
+  
+  
+    <nav id="my-toc-content" class="">
+     { /*<span>
+        {
+          switchLang(
+            "Spis treści",
+           
+            "Turinys"
+          )
+        }
+      </span>*/}
+    </nav>
+  
+</header>

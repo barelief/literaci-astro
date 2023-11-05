@@ -1,0 +1,5 @@
+---
+import i18next from "i18next";
+const {lt , pl} = Astro.props; 
+---
+{i18next.language === "pl"?pl:lt}

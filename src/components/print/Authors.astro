@@ -1,0 +1,11 @@
+---
+import { get } from "../../../../common/airtable.js";
+
+const rec = await get("appZ36TrComr9ukf3", "Autoriai", "Name normalized", "asc", "", "");
+
+const names = rec.map((item) => item.fields["Name"]);
+const result = names.join(', ');
+
+---
+
+{result}

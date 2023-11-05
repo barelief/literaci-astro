@@ -1,0 +1,71 @@
+---
+import { switchLang } from "../wrappers/LangSwitchWrapper";
+import i18next, { changeLanguage } from "i18next";
+---
+
+
+  <div class=" backmatter pt-[-100px]">
+
+      {
+        i18next.language === "pl" ? (
+
+<div>
+<h2 class="text-2xl italic titles font-bold ">
+pojemny<br/>
+horyzont
+</h2>
+antologia poezji polskiej i litewskiej 
+<br/><br/>
+</div>
+
+<pre class="text-[10px]">
+<b>koncepcja, wybór, projekt graficzny i skład</b> 
+Bartosz Połoński
+
+<b>autorzy wierszy:</b>
+Mantas Balakauskas, Dorota Bartoszewicz, Mirosława Bartoszewicz, Alina Borzenkaitė, Ramunė Brundzaitė, Nerijus Cibulskas, Linas Daugėla, Marek Domański, Daniel Dowejko, Paulius Gadeikis, Dovydas Grajauskas, Ignė Grikevičiūtė, Patricija Gudeikaitė, Goda Gurinskaitė, Jonas Jankauskas, Aušra Kaziliūnaitė, Jovaras Kelpšas, Mindaugas Kirka, Daniel Krajczyński, Laura Kromalcaitė, Žygimantas Kudirka, Gabrielė Labanauskaitė, Augustas Lapinskas, Romuald Ławrynowicz, Ramūnas Liutkevičius, Agnieszka Mackojć, Marzena Mackojć-Sinkevičienė, Agnieszka Masalytė, Bożena Naruszewicz, Ewa Nausewicz, Ernestas Noreika, Dominykas Norkūnas, Dominika Olicka, Karol Pasznikowicz, Krystyna Pawtel, Tomas Petrulis, Marius Povilas Elijas Martynenko, Nojus Saulytis, Tomasz Snarski, Monika Staugaitytė, Patrycja Stefanowicz, Tomas Tamošiūnas, Guoda Taraškevičiūtė, Uršulė Toleikytė, Mantas Toločka, Kristina Užėnaitė, Indrė Valantinaitė, Gabrielė Vetkinaitė, Ingrida Viluckytė, Kamila Zujevič, Maria Żukowska
+
+<b>przekład na język litewski:</b> 
+Birutė Jonuškaitė, Vidas Morkūnas, Žilvinas Norkūnas, Jūratė Petronienė, Bartosz Połoński
+
+<b>redakcja tekstów litewskich</b>
+Greta Ambrazaitė
+
+<b>przekład na język polski, redakcja tekstów polskich</b>
+Agnieszka Rembiałkowska
+</pre>
+        ) : (
+          
+
+        <div>
+  <h2 class="text-2xl italic titles font-bold">
+    pasaulis<br/>
+telpa<br/>
+akiratin
+</h2>
+lenkų ir lietuvių poezijos rinktinė
+<br/><br/>
+</div>
+
+<pre class="text-[10px] ">
+<b>sudarytojas, dizaineris</b> 
+Bartosz Połoński
+
+<b>eilėraščių autoriai:</b> 
+Mantas Balakauskas, Dorota Bartoszewicz, Mirosława Bartoszewicz, Alina Borzenkaitė, Ramunė Brundzaitė, Nerijus Cibulskas, Linas Daugėla, Marek Domański, Daniel Dowejko, Paulius Gadeikis, Dovydas Grajauskas, Ignė Grikevičiūtė, Patricija Gudeikaitė, Goda Gurinskaitė, Jonas Jankauskas, Aušra Kaziliūnaitė, Jovaras Kelpšas, Mindaugas Kirka, Daniel Krajczyński, Laura Kromalcaitė, Žygimantas Kudirka, Gabrielė Labanauskaitė, Augustas Lapinskas, Romuald Ławrynowicz, Ramūnas Liutkevičius, Agnieszka Mackojć, Marzena Mackojć-Sinkevičienė, Agnieszka Masalytė, Bożena Naruszewicz, Ewa Nausewicz, Ernestas Noreika, Dominykas Norkūnas, Dominika Olicka, Karol Pasznikowicz, Krystyna Pawtel, Tomas Petrulis, Marius Povilas Elijas Martynenko, Nojus Saulytis, Tomasz Snarski, Monika Staugaitytė, Patrycja Stefanowicz, Tomas Tamošiūnas, Guoda Taraškevičiūtė, Uršulė Toleikytė, Mantas Toločka, Kristina Užėnaitė, Indrė Valantinaitė, Gabrielė Vetkinaitė, Ingrida Viluckytė, Kamila Zujevič, Maria Żukowska
+
+<b>vertėjai į lietuvių kalbą:</b> 
+Birutė Jonuškaitė, Vidas Morkūnas, Žilvinas Norkūnas, Jūratė Petronienė, Bartosz Połoński
+
+<b>lietuviškų tekstų redaktorė</b> 
+Greta Ambrazaitė
+
+<b>vertėja į lenkų kalbą ir lenkiškų tekstų redaktorė</b> 
+Agnieszka Rembiałkowska
+</pre>
+         
+        )
+      }
+   
+  </div>
+ 

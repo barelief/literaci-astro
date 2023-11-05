@@ -1,0 +1,161 @@
+---
+import { changeLanguage } from "i18next";
+import "../styles/print.css";
+import { get } from "../../../common/airtable.js";
+import Poems from "../components/print/Poems.astro";
+import FrontMatter from "../components/print/FrontMatter.astro";
+import LangSwitch from "../components/wrappers/LangSwitch.astro";
+import SwitchLanguageButton from "../components/print/SwitchLanguageButton.astro";
+import { switchLang } from "../components/wrappers/LangSwitchWrapper";
+import Intro from "../components/print/Intro.astro";
+import BackMatter from "../components/print/BackMatter.astro";
+
+changeLanguage("lt");
+
+const rec1 = await get("appZ36TrComr9ukf3", "Eiles", "order", "asc", "Type", "transgression");
+const rec2 = await get("appZ36TrComr9ukf3", "Eiles", "order", "asc", "Type", "relationship");
+const rec3 = await get("appZ36TrComr9ukf3", "Eiles", "order", "asc", "Type", "identity");
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{switchLang("Pojemny Horyzont", "Pasaulis telpa akiratin")}</title>
+    <!-- Include Tailwind CSS -->
+
+    <script is:inline src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"
+    ></script>
+
+    <!-- TOC -->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/toc/css/table-of-content.css"
+    />
+
+    <!-- createToc javascript: -->
+    <script is:inline type="text/javascript" src="/toc/js/createToc.js"
+    ></script>
+
+    <!-- register handler beforeParsed() and call createToc script -->
+    <script is:inline type="text/javascript" src="/toc/js/handlers.js"></script>
+
+    <!-- END TOC  -->
+
+    <style is:inline media="print">
+      @media only print {
+        .hidden-div {
+          /* display: none;*/
+        }
+        
+      }
+    </style>
+
+    <style is:inline media="screen">
+      @media screen {
+        .hidden-div {
+          
+          
+          left: 0px;
+          top: 0px;
+        
+          z-index: 0;
+        }
+
+        body {
+          background-color: whitesmoke;
+        }
+
+        .pagedjs_page {
+          margin-bottom: 20px;
+          flex: none;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+          background-color: white;
+        }
+
+        .pagedjs_pages {
+          width: calc(var(--pagedjs-width) * 2);
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          transform-origin: 0 0;
+          margin: 0 auto;
+        }
+
+        .pagedjs_first_page {
+          margin-left: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <FrontMatter />
+    <main>
+      <!-- Intro -->
+      <section class="text-xs text-justify">
+        <div class="hidden-div mw-content-ltr">
+
+          <span class="running-title hidden">{switchLang("Skaitytojams","Do Czytelników")}</span> 
+
+          <h2 class="font-normal text-xs titles toc-space italic">
+            {switchLang("Do Czytelników", "Skaitytojams")}
+            <span class="text-[8px]"> </span>
+          </h2>
+        </div>
+        <Intro />
+      </section>
+
+      <section class="intro">
+        <!-- TOC hidden link -->
+        <div class="hidden-div mw-content-ltr">
+          <h2 class="font-normal italic text-xs titles toc-space mt-3">
+            {switchLang("Transgresja", "Transgresija")}
+            <span class="uppercase font-normal text-[8px] names"> </span>
+          </h2>
+        </div>
+        <div class="italic text-lg text-right">
+          <LangSwitch pl="Transgresja" lt="Transgresija" />
+        </div>
+      </section>
+      <Poems items={rec1} />
+
+      <section class="intro">
+        <!-- TOC -->
+        <div class="hidden-div mw-content-ltr">
+          <div class="pb-5"></div>
+          <h2 class="font-normal text-xs titles toc-space mt-3 italic">
+            <LangSwitch pl="Relacje" lt="Santykiai" />
+            <span class="text-[8px]"> </span>
+          </h2>
+        </div>
+        <div class="italic text-lg text-right">
+          <LangSwitch pl="Relacje" lt="Santykiai" />
+        </div>
+      </section>
+
+      <Poems items={rec2} />
+
+      <section class="intro">
+        <div class="hidden-div mw-content-ltr">
+          <h2 class="font-normal text-xs titles toc-space mt-3 italic">
+            <LangSwitch pl="Tożsamość" lt="Tapatybė" />
+            <span class="text-[8px]"> </span>
+          </h2>
+        </div>
+        <div class="italic text-lg text-right">
+          <LangSwitch pl="Tożsamość" lt="Tapatybė" />
+        </div>
+      </section>
+
+      <Poems items={rec3} />
+      
+    </main>
+
+    <BackMatter />
+  </body>
+</html>

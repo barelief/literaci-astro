@@ -1,0 +1,12 @@
+---
+const { items } = Astro.props;
+import WierszeCard from "../components/WierszeCard.astro"
+---
+
+{
+  items.map((item, index) => (
+  <table class="min-w-full border-2">
+      <WierszeCard item={item} index={index+1} />
+  </table>
+  )) 
+}

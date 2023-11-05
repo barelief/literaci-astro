@@ -1,0 +1,10 @@
+---
+const { items } = Astro.props;
+import PoemCard from "./PoemCard.astro"
+---
+
+{
+  items.map((item, index) => (
+      <PoemCard item={item}  />
+  )) 
+}

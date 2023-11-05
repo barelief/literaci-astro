@@ -1,0 +1,16 @@
+---
+import LangSwitch from "../wrappers/LangSwitch.astro";
+import { switchLang } from "../wrappers/LangSwitchWrapper";
+
+const link = "/" + switchLang("", "pl/") + "print"
+---
+<div class="fixed top-0 left-0 bg-gray-800 p-4">
+    <a href={link} class="text-white hover:text-gray-300">
+        <LangSwitch lt="Lietuviškai" pl="lenkiškai" />
+    </a>
+  </div>
+
+
+
+
+

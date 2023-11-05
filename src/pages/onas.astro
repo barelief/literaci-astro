@@ -1,22 +1,18 @@
 ---
+import { changeLanguage } from "i18next";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Czlonkowie from "../components/Czlonkowie.astro";
-import {
-  getFilteredRecords,
-  get,
-  getSingleRecord,
-  records,
-  getAllRecords,
-} from "../../../common/airtable.js";
-
-// const rec = await get("","Autorzy","NameNormalized", "asc", "LLLA", true);
-const rec = await getFilteredRecords("LLLA", true);
-
-
+import { getFilteredRecords, get, getSingleRecord, records, getAllRecords, } from "../../../common/airtable.js";
+//const rec = await get("","Autorzy","NameNormalized", "asc", "", true);
+//const rec = await getFilteredRecords("LLLA", true);
+//const rec = await getAllRecords("Autorzy");
+const rec = await get("", "Autorzy", "NameNormalized", "asc", "LLLA", true);
 // This is workaround, because map is not goind to happen without await
 import { Image, Picture } from "@astrojs/image/components";
+
+changeLanguage("lt");
 ---
 
 <!DOCTYPE html>
@@ -51,7 +47,8 @@ import { Image, Picture } from "@astrojs/image/components";
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 x1:grid-cols-3 2x1:grid-cols-4 gap-10"
       >
         <!-- <Czlonkowie czlonkowieObject={getFilteredRecords("LLLA", true)} />  -->
-         <Czlonkowie czlonkowieObject={rec} /> 
+        
+         <Czlonkowie czlonkowieObject={rec} />
       </div>
       <div class="w-full lg:w-1/2 x1:w-1/2 2x1:w-1/2 mt-10">
         Wszystkich zainteresowanych wstąpieniem do Stowarzyszenia <a

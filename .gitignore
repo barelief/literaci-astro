@@ -22,3 +22,4 @@ pnpm-debug.log*
 sync.cmd
 *.jpg
 *.png
+*.zip

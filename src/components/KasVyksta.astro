@@ -6,6 +6,15 @@ const news = [
       "Polskie wydanie zbioru poezji „Dzika Grusza, Wojna Grzybów“ (Aleksander Śnieżko)",
   },
   {
+    data: "2022-09-08",
+    tekst: "Poezja Juozasa Kardelisa w dwóch językach „Kiedy niebo zakwita“",
+  },
+  {
+    data: "2022-08-10",
+    tekst:
+      "Antologia wierszy Aliny Lassoty w dwóch językach „Weźmy na pamiątkę deszcz“",
+  },
+  {
     data: "2021-09-26",
     tekst:
       "Wydarzenie interdyscyplinarne „My Musimy W Trawach Leżeć“ (Alina Lassota)",
@@ -32,7 +41,12 @@ const news = [
   {
     news.map((item) => (
       <tr>
-        <td style="max-width:100%; white-space:nowrap; vertical-align: top;" class="font-sans pt-1.5 text-xs pr-2 italic font-medium ">{item.data} </td>
+        <td
+          style="max-width:100%; white-space:nowrap; vertical-align: top;"
+          class="font-sans pt-1.5 text-xs pr-2 italic font-medium text-[#a8a29e] "
+        >
+          {item.data}{" "}
+        </td>
         <td>{item.tekst}</td>
       </tr>
     ))

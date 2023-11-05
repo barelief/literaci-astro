@@ -1,0 +1,44 @@
+---
+import i18next, { changeLanguage } from "i18next";
+import { switchLang } from "../wrappers/LangSwitchWrapper";
+const { item } = Astro.props;
+
+const inputToOutput = {
+  "transgression": switchLang("transgresja","transgresija"),
+  "relationship": switchLang("relacje","santykiai"),
+  "identity": switchLang("tożsamość","tapatybė"),
+  // Add more mappings as needed
+};
+
+const type = inputToOutput[item.fields["typ"]];
+
+function checkForEllipsis(inputString) {
+  if (inputString.endsWith("...")) {
+    return "* * *";
+  } else {
+    return inputString;
+  }
+}
+
+const finalTitle = checkForEllipsis(item.fields["Name "+i18next.language]);
+---
+
+<section class="break-before"> 
+  <div  class="hidden-div mw-content-ltr ">
+    <h2 class="font-bold text-xs titles toc-space">{item.fields["Name "+i18next.language]} <span class="uppercase font-normal text-[8px] names">{item.fields["Author"]}</span></h2>
+    </div>
+
+  <span class="running-section hidden">{type}</span>
+  <span class="running-title hidden">{item.fields["Name "+switchLang("lt","pl")]}</span> 
+  <span class="hidden">{item.fields["Name "+switchLang("lt","pl")]}</span> 
+  <h3 class="font-bold text-sm pb-3 titles">{finalTitle}</h3>  
+  <pre class:list={['text-xs', item.fields["proza"]?"text-justify":"", item.fields["tailwind"]]} style={item.fields["css"]}>{item.fields["poem "+i18next.language]}</pre>
+  <div class="pt-4 font-bold leading-3 titles">
+    <span class="uppercase font-bold credit">{item.fields["Author"]}</span><br />
+    {i18next.language === "pl" &&  item.fields["lang"]==="lithuanian" && <span class="italic translator">tłumaczyła </span> <span class=" italic translator">{item.fields["Translator"]}</span>}
+    {i18next.language === "lt" && item.fields["lang"]==="polish" && <span class="italic translator">vertė </span> <span class=" italic translator">{item.fields["Translator"]}</span>}
+  </div>
+  {item.fields["pastabos "+i18next.language]? <div class="pt-3 text-[9px] bottom">{item.fields["pastabos "+i18next.language]}</div>: " "}
+  
+  
+</section> 

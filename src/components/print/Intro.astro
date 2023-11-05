@@ -1,0 +1,129 @@
+---
+import LangSwitch from "../wrappers/LangSwitch.astro";
+import { switchLang } from "../wrappers/LangSwitchWrapper";
+import i18next, { changeLanguage } from "i18next";
+---
+
+<!--Polskie INTRO -->
+<div class="pb-3">
+  {
+    i18next.language === "pl" ? (
+      <>
+        Szanowni Czytelnicy,
+      </>
+    ) : (
+      <>Brangūs skaitytojai,</>
+    )
+  }
+</div>
+
+<div class="pb-2">
+  {
+    i18next.language === "pl" ? (
+      <>
+        ideą antologii <i>Pojemny horyzont</i> jest poszukiwanie tego, co łączy
+        poetów polsko- i litewskojęzycznych, którzy tworzą już w Litwie
+        niepodległej, czyli po 1990 roku, a zwłaszcza w ostatnich dwóch
+        dekadach. W tych dwóch czerpiących z różnej tradycji nurtach
+        współczesnej poezji Litwy przegląda się nie tylko tożsamość, osobiste
+        historie i marzenia autorów, ale również sposób, w jaki reagują oni na
+        codzienne wyzwania współczesnego świata.
+      </>
+    ) : (
+      <>
+      rinktinės <i>Pasaulis telpa akiratin</i> idėja – ieškoti saitų tarp lietuviškai <nobr>ir lenkiškai</nobr>
+kuriančių poetų, rašančių nepriklausomoje Lietuvoje, po <nobr>1990-ųjų</nobr>, ypač
+paskutiniais dviem dešimtmečiais. Šiose dviejose šiuolaikinės Lietuvos poezijos
+srovėse, trykštančiose iš skirtingų tradicijų, atsispindi ne tik autorių tapatybė,
+asmeninės istorijos ir svajonės, bet ir tai, kaip jie interpretuoja kasdienius šiuolaikinio
+pasaulio iššūkius.
+      </>
+    )
+  }
+</div>
+
+<div class="pb-2">
+  {
+    i18next.language === "pl" ? (
+      <>
+        Wybierając wiersze do antologii, zaprosiłem do współpracy zarówno
+        autorów, którzy mają w dorobku nagradzane publikacje literackie, jak <nobr>i
+        debiutantów</nobr>. Narracja – albo oś dramaturgiczna{" "}
+        <i>Pojemnego horyzontu</i> – opiera się na trzech zagadnieniach.
+        Początkiem jest „Transgresja”, czyli przekraczanie granic, bunt wobec
+        zastanych norm, jak np. u Ramūnasa Liutkevičiusa czy Tomasa Tamošiūnasa.
+        Część środkowa – „Relacje“ – to próby pogodzenia ego i empatii; do
+        takiej harmonii dążą m.in. Mindaugas Kirka i Dominika Olicka. Utwory
+        prezentowane w finale, czyli w „Tożsamości“, stanowią opis
+        rzeczywistości uwewnętrznionej: dla autorek takich jak Laura Kromalcaitė
+        czy Maria Żukowska jest to po prostu świat, jakim żyją, mimo że przez
+        innych może być odbierany jako utopia.
+      </>
+    ) : (
+      <>
+      Rinkdamas eilėraščius antologijai įtraukiau tiek autorius,
+pelniusius literatūrinių apdovanojimų, tiek debiutantus. Rinktinės <i>Pasaulis
+telpa akiratin</i> pasakojimas, arba dramaturginė ašis, paremta trimis temomis.
+Pradedama nuo „Transgresijos“, arba ribų peržengimo, maišto prieš nusistovėjusias
+normas – ši tema iškyla Ramūno Liutkevičiaus, Tomo Tamošiūno ir kt. eilėraščiuose.
+Antroji dalis – „Santykiai“ – parodo autorių siekį suderinti ego ir empatiją; tokios
+harmonijos siekia, pavyzdžiui, Mindaugas Kirka ir Dominika Olicka. Paskutinėje
+dalyje „Tapatybė“ pristatomi kūriniai yra vidinės tikrovės aprašymai: tokioms
+autorėms kaip Laura Kromalcaitė ir Maria Żukowska tai pasaulis, kuriame jos
+gyvena, nors kiti tokią tikrovę vadintų utopija.
+      </>
+    )
+  }
+</div>
+
+<div class="pb-2">
+  {
+    i18next.language === "pl" ? (
+      <>
+        Każda z trzech części książki ma swoistą dynamikę, w każdej polscy <nobr>i
+        litewscy</nobr> autorzy nieco inaczej rozgrywają temat wiodący. Wspornikiem
+        mostów tematycznych jest koncepcja graficzna. Zaczynając lekturę od
+        okładki z tytułem <i>Pojemny horyzont</i>, zanurzamy się w polszczyźnie
+        – <nobr>w jednym</nobr> ciągu czytamy wiersze napisane w oryginale po polsku (także <nobr>z
+        elementami</nobr> wileńskimi) i polskie przekłady wierszy litewskich. Jeśli
+        obrócimy książkę, przekonamy się, że <i>Pasaulis telpa akiratin</i> –
+        tym razem oryginalne wiersze litewskie splotą się z litewskimi
+        przekładami wierszy polskich. Obie wersje językowe spotykają się
+        „pośrodku”.
+      </>
+    ) : (
+      <>
+      Visos trys knygos dalys pasižymi savita dinamika, kiekvienoje iš jų lenkų ir
+lietuvių autoriai pagrindinę temą plėtoja savaip. Teminius tiltus išlaiko ir grafinė knygos koncepcija. Pradėję skaityti nuo viršelio su užrašu <i>Pasaulis telpa akiratin</i> pasineriame į lietuvių kalbą – skaitome tiek originalius lietuviškus eilėraščius, tiek lenkiškai rašančių Lietuvos autorių eilėraščių vertimus į lietuvių kalbą. Apvertę knygą išvysime <i>Pojemny horyzont</i> – čia lenkiški tekstai originalo kalba (su Vilnijos kalbiniais ypatumais) persipina su lietuviškų eilėraščių vertimais į lenkų kalbą. Abi kalbos susitinka ties viduriu.
+      </>
+    )
+  }
+</div>
+
+<div class="pb-2">
+  {
+    i18next.language === "pl" ? (
+      <>
+        <i>Pojemny horyzont</i> może stać się zarówno manifestem różnorodności,
+        jak <nobr>i świadectwem</nobr> wspólnoty – ma służyć również wzmacnianiu kulturowej
+        więzi i współpracy między polskim i litewskim środowiskiem literackim.
+        Przede wszystkim jednak jest to zaproszenie do odkrywania, co jest
+        istotne dla młodych twórców Litwy (niezależnie od ich identyfikacji
+        narodowościowej i od języka, w jakim tworzą), i do wzajemnych translacji
+        na bieżąco. W przekładach coś gubimy, możemy nawet sami się zagubić, ale
+        to dzięki nim mamy szansę lepiej się zrozumieć. Tworzyć wspólny
+        horyzont, który pomieści wszystkie nasze światy.
+      </>
+    ) : (
+      <>
+      <i>Pasaulis telpa akiratin</i> gali tapti ir įvairovės manifestu, ir bendrumo liudijimu – rinktinė taip pat skirta lietuvių ir lenkų literatūros laukų kultūriniams ryšiams ir
+bendradarbiavimui stiprinti. Bet visų pirma tai kvietimas atrasti, kas svarbu
+jaunesniesiems Lietuvos autoriams (nepriklausomai nuo jų tautinės saviidentifikacijos ir
+kalbos, kuria rašo), ir nuolat versti jų kūrybą. Versdami šį tą prarandame, galime prarasti net patys save, tačiau būtent vertimai suteikia galimybę geriau suprasti vieniems kitus. Sukurti bendrą horizontą, kuriame tilptų visi
+mūsų pasauliai.
+      </>
+    )
+  }
+</div>
+
+<div class="pb-5 text-right">Bartosz Połoński</div>

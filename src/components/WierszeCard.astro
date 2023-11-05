@@ -1,0 +1,47 @@
+---
+const { item, index } = Astro.props;
+// console.log(index)
+---
+<style>
+pre {
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  font-family: serif;
+}
+</style>
+
+<tr class:list={['p-3' , 'align-top',item.fields["lang"]==="polish" && "bg-red-50"]}>
+
+<td>
+  <h3 class="font-bold text-xl py-3 font-serif">{index}. {item.fields["Name lt"]}</h3>
+  <pre class="">{item.fields["poem lt"]}</pre>
+  <div class="py-3 text-sm">
+    <span class="uppercase font-bold">{item.fields["Author"]}</span><br />
+    {item.fields["lang"]==="polish" && <span class="italic">vertė </span> <span class=" italic uppercase">{item.fields["Translator"]}</span>}
+  </div>
+</td>
+
+<td>
+  <h3 class="font-bold text-xl py-3 font-serif">{index}. {item.fields["Name pl"]} (zredagowane)</h3>
+  <pre class="">{item.fields["poem pl"]}</pre>
+  <div class="py-3  text-sm">
+    <span class="uppercase font-bold">{item.fields["Author"]}</span><br />
+    {/* item.fields["lang"]==="polish" && <span class="italic">redakcja</span>  <span class="uppercase italic"> Agnieszka Rembiałkowska</span> <br/> */} 
+    {item.fields["lang"]==="lithuanian" && <span class="italic">tłumaczyła</span>  <span class="uppercase italic"> Agnieszka Rembiałkowska</span> <br/>}
+       
+  </div> 
+</td>
+{/* 
+<td>
+  <h3 class="font-bold text-xl py-3 font-serif">{index}. {item.fields["Name original"]} (oryginał)</h3>
+  <pre class="">{item.fields["original"]}</pre>
+  <div class="py-3 text-sm">
+    <span class="uppercase font-bold">{item.fields["Author"]}</span>
+    
+  </div> 
+</td>
+*/}
+</tr>
