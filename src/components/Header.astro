@@ -4,12 +4,25 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav>
-		<HeaderLink href="/">Literaci</HeaderLink>
-		<HeaderLink href="/kontakt/">Kontakt</HeaderLink>
-		<HeaderLink href="/onas/">O nas</HeaderLink>
-		<HeaderLink href="/partner/">Partnerzy</HeaderLink>
-	</nav>
+
+	<nav class="py-4">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <HeaderLink href="/"><img src="/logo2.png" class="h-[20px]" /></HeaderLink>
+            <div class="w-full md:w-auto md:flex mt-4 md:mt-0">
+				<HeaderLink href="https://shop.literaci.lt/">Sklep 🛒</HeaderLink>
+				<HeaderLink href="/kontakt/">Kontakt</HeaderLink>
+				<HeaderLink href="/onas/">O nas</HeaderLink>
+				<HeaderLink href="/partner/">Partnerzy</HeaderLink>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
 </header>
 <style>
 	header {
@@ -19,4 +32,6 @@ import { SITE_TITLE } from '../consts';
 	h2 {
 		margin: 0.5em 0;
 	}
+
+
 </style>

@@ -10,6 +10,7 @@
 
 body {
   font-family: "Crimson Text", "EB Garamond",Verdana, sans-serif;
+  font-size: larger;
   margin: auto;
   padding: 20px;
   max-width: 95ch;
@@ -20,32 +21,47 @@ body {
   line-height: 1.5;
   color: #444;
 }
+
 .titles {
   font-family: "Playfair Display", serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1
+{
+  font-weight: 400;
+  font-size: 32pt;
+  margin-bottom: 5pt;
+  margin-top: 2pt;
+  font-family: "Playfair Display", serif;
+
+}
+
+h3
+{
+  padding:20px 0 20px 0px;
+}
+
+
 strong,
 b {
   color: #222;
+
 }
 a {
   color: #3273dc;
 }
+
+
+
 nav a {
   margin-right: 10px;
 }
 textarea {
   width: 100%;
-  font-size: 16px;
+  font-size: larger;
 }
 input {
-  font-size: 16px;
+  font-size: larger;
 }
 content {
   line-height: 1.6;
@@ -73,4 +89,31 @@ blockquote {
   padding: 2px 0px 2px 20px;
   margin: 0px;
   font-style: italic;
+}
+
+/* lists */
+
+/* Unordered Lists */
+ul {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;
+}
+
+ul li {
+  padding-left: 20px;
+  
+  position: relative;
+}
+
+ul li:before {
+  content: '•'; /* Custom bullet */
+  color: #007BFF; /* Bullet color */
+  font-size: 20px; /* Bullet size */
+  position: absolute;
+  left: 0;
+}
+
+/* Paragraphs */
+p {
+    margin: 20px 0;
 }
